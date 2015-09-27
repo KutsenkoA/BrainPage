@@ -1,0 +1,25 @@
+{
+  "name": "brainpage",
+  "version": "1.0.0",
+  "description": "Brain Academy Finally Practice",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KutsenkoA/BrainPage.git"
+  },
+  "author": "Andrey Kutsenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KutsenkoA/BrainPage/issues"
+  },
+  "homepage": "https://github.com/KutsenkoA/BrainPage#readme",
+  "dependencies": {
+    "bower": "^1.5.3",
+    "gulp": "^3.9.0",
+    "gulp-bower": "0.0.10",
+    "gulp-google-cdn": "^2.0.0"
+  }
+}
