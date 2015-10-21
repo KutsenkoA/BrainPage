@@ -1,10 +1,14 @@
 /**
  * Created by andr on 21.10.15.
  */
-(function() {
+(function(options) {
   var
-    backend = 'http://192.168.0.112:9876',
-    json = {};
+    backend = options.backend || 'http://192.168.0.112:9876',
+    pageSize = options.pageSize || 10,
+    fishes = {},
+    paginationPages = [],
+    pages;
+
 
   function createLine(data) {
     var
@@ -19,8 +23,6 @@
         } else {
           el.innerHTML = inner;
         }
-
-        //el.className = 'table-cell';
 
         return el;
       },
@@ -44,27 +46,133 @@
     return line;
   }
 
-  // load data from backend
-  var
-    xhr = new XMLHttpRequest(),
-    table = document.getElementById('jsonTable');
+  function parseJson(data) {
 
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
+    try {
+      fishes = JSON.parse(data);
+    } catch (err) {
+      console.log(err);
+    }
 
-      try {
-        json = JSON.parse(xhr.responseText);
-      } catch (err) {
-        console.log(err);
+    showFishes(0, pageSize);
+  }
+
+  function loadJson(url) {
+    // load data from backend
+    var
+      xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        parseJson(xhr.responseText);
+        createPagination();
+      }
+    };
+
+    xhr.open('GET', url);
+    xhr.send();
+  }
+
+  function createPagination() {
+    var
+      pagHolder = document.getElementById('paginationHolder'),
+      pagLast = document.getElementById('paginationLast'),
+      pagFirst = document.getElementById('paginationFirst'),
+      paginationList,
+      i,
+      button,
+      a;
+
+    pages = Math.ceil(fishes.length / pageSize);
+
+    if (fishes.length < pageSize) {
+      pagHolder.remove();
+    } else {
+      paginationList = document.getElementById('paginationList');
+
+      for(i = 0; i < pages; i++) {
+        button = document.createElement('LI');
+        a = document.createElement('A');
+
+        a.className = 'pag_button';
+        a.setAttribute('href', '#');
+        a.dataset.page = i;
+        a.innerText = i + 1;
+
+        button.appendChild(a);
+        button.addEventListener('click', pagination);
+
+        if (!i) {
+          button.className = 'active';
+        }
+
+        paginationPages.push(button);
+
+        paginationList.insertBefore(button, pagLast);
       }
 
-      json.forEach(function(fish) {
-        table.appendChild(createLine(fish));
-      })
+      pagFirst.addEventListener('click', function() {
+        pagination(0);
+      });
+      pagLast.addEventListener('click', function() {
+        pagination(pages - 1);
+      });
     }
-  };
 
-  xhr.open('GET', backend);
-  xhr.send();
+  }
 
-})();
+  function pagination(param) {
+    var
+      page = typeof param === 'object' ? param.target.dataset.page : param,
+      paginationFirst = document.getElementById('paginationFirst'),
+      paginationLast = document.getElementById('paginationLast');
+
+    paginationPages.forEach(function(button) {
+      button.className = '';
+    });
+
+    showFishes(page * pageSize, page * pageSize + pageSize);
+
+
+    console.log(page);
+
+    if (page == 0) {
+      console.log(paginationFirst);
+      paginationPages[0].className = 'active';
+      paginationFirst.className = 'disabled';
+      paginationLast.className = '';
+    } else if (page === pages - 1) {
+      paginationFirst.className = '';
+      paginationLast.className = 'disabled';
+      console.log(paginationLast.previousSibling);
+      paginationLast.previousSibling.className = 'active';
+    } else {
+      paginationLast.className = '';
+      paginationFirst.className = '';
+      paginationPages[page].className = "active";
+    }
+  }
+
+  function showFishes(from, to) {
+    var
+      index = 0,
+      table = document.getElementById('jsonTable');
+
+    table.innerHTML = "";
+
+    fishes.forEach(function(fish) {
+      if (index >= from && index < to) {
+        table.appendChild(createLine(fish));
+      }
+      index++;
+    });
+  }
+
+
+  loadJson(backend);
+
+})({
+  pageSize: 3
+});
+
+
