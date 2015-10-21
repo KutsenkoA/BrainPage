@@ -21,16 +21,14 @@ html, body{
     }
 
     .content-table{
-        display: table;
-        width: 100%;
-
-        border-left: 1px solid #ddd;
-        border-right: 1px solid #ddd;
         border-top: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
     }
 
     .table-row{
-        display: table-row;
+        display: table;
+        width: 100%;
     }
 
     .table-row:nth-of-type(even) .table-row-content{
@@ -41,6 +39,10 @@ html, body{
         margin: 0;
         padding: 0;
         list-style: none;
+
+        display: table-row;
+        width: 100%;
+
         border-bottom: 1px solid #ddd;
     }
 
