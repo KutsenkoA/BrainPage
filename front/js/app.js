@@ -61,13 +61,22 @@
 
         return el;
       },
-      img = document.createElement('img');
+      img = document.createElement('img'),
+      predator;
 
     if (data.image) {
       img.src = data.image;
       img.alt = data.name;
     } else {
       img = 'Фото';
+    }
+
+    console.log('[app 74]', typeof data.predator);
+
+    if (typeof data.predator == 'boolean' && !data.predator) {
+      data.predator = 'Нет';
+    } else if (typeof data.predator == 'boolean' && data.predator) {
+      data.predator = 'Да';
     }
 
     ul.appendChild(li(img)).className = 'table-cell photo';
@@ -216,7 +225,7 @@
   loadJson(backend);
 
 })({
-  pageSize: 3
+  pageSize: 5
 });
 
 

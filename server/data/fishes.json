@@ -33,6 +33,27 @@
     "predator": true,
     "tags": ["Река", "Море", "Зубы"],
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/%D0%A1%D1%83%D0%B4%D0%B0%D0%BA%28Zander%29.jpg"
+  },
+  {
+    "name": "Карп",
+    "maxWeight": 62,
+    "predator": false,
+    "tags": ["Река", "Озеро", "Ставок", "Платная рыбалка"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Common_carp.jpg"
+  },
+  {
+    "name": "Лосось",
+    "maxWeight": 43,
+    "predator": true,
+    "tags": ["Море", "Вкусная", "Дорогая"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Atlantischer_Lachs.jpg/1920px-Atlantischer_Lachs.jpg"
+  },
+  {
+    "name": "Голавль",
+    "maxWeight": 6.5,
+    "predator": true,
+    "tags": ["Река", "Трудно поймать"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Squalius_cephalus_Prague_Vltava_2.jpg/1280px-Squalius_cephalus_Prague_Vltava_2.jpg"
   }
 ]
 
