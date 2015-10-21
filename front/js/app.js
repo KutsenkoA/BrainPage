@@ -14,7 +14,6 @@
   function createHeader() {
     var
       header = createLine({
-        image: '',
         name: '<button type="button" class="btn btn-primary" data-sort="name">Название</button>',
         maxWeight: '<button type="button" class="btn btn-primary" data-sort="maxWeight">Максимальный вес</button>',
         predator: '<button type="button" class="btn btn-primary" href="#" data-sort="predator">Хищник</button>',
@@ -64,8 +63,12 @@
       },
       img = document.createElement('img');
 
-    img.src = data.image;
-    img.alt = data.name;
+    if (data.image) {
+      img.src = data.image;
+      img.alt = data.name;
+    } else {
+      img = 'Фото';
+    }
 
     ul.appendChild(li(img)).className = 'table-cell photo';
     ul.appendChild(li(data.name)).className = 'table-cell name';
@@ -162,6 +165,10 @@
       page = typeof param === 'object' ? param.target.dataset.page : param,
       paginationFirst = document.getElementById('paginationFirst'),
       paginationLast = document.getElementById('paginationLast');
+
+    if (typeof param === 'object' && param.className === 'disabled') {
+      return;
+    }
 
     currentPage = page;
 
