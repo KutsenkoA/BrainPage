@@ -1,0 +1,31 @@
+html, body{
+    height: 100%;
+}
+
+.wrapper{
+    min-height: 100%;
+    height: auto!important;
+    height: 100%;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.content{
+    padding-bottom: 40px;
+}
+
+    .pagination-holder{
+        text-align: center;
+    }
+
+.footer{
+    margin: -40px 0 0;
+    padding: 10px;
+
+    color: #aaa;
+}
+    .footer .copyright{
+        margin-bottom: 0;
+    }
