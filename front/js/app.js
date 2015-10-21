@@ -3,7 +3,8 @@
  */
 (function() {
   var
-    backend = 'http://192.168.0.112:9876';
+    backend = 'http://192.168.0.112:9876',
+    json = {};
 
   function createLine(data) {
     var
@@ -16,12 +17,16 @@
         el.innerText = text;
 
         return el;
-      };
+      },
+      img = document.createElement('IMG');
+
+    img.src = data.image;
 
     ul.appendChild(li(data.name));
     ul.appendChild(li(data.maxWeight));
     ul.appendChild(li(data.predator));
     ul.appendChild(li(data.tags));
+    ul.appendChild(img);
 
     line.appendChild((ul));
 
@@ -35,8 +40,6 @@
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      var
-        json = {};
 
       try {
         json = JSON.parse(xhr.responseText);
