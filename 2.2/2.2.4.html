@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<ul>
+  <li>First element</li>
+  <li>Second element</li>
+  <li>Third element</li>
+</ul>
+<button id="ok_btn">Change something</button>
+</body>
+<script type="text/javascript">
+  (function() {
+    var
+        changeButton = document.getElementById('ok_btn');
+
+    changeButton.addEventListener('click', function() {
+      var
+          lis = document.getElementsByTagName('LI');
+
+      lis[Math.floor(Math.random() * lis.length)].style.color = "red";
+    })
+  })();
+</script>
+</html>
