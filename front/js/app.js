@@ -14,10 +14,10 @@
   function createHeader() {
     var
       header = createLine({
-        name: '<button type="button" class="btn btn-primary" data-sort="name">Название</button>',
-        maxWeight: '<button type="button" class="btn btn-primary" data-sort="maxWeight">Максимальный вес</button>',
-        predator: '<button type="button" class="btn btn-primary" href="#" data-sort="predator">Хищник</button>',
-        tags: '<button type="button" class="btn btn-primary" href="#" data-sort="tags">Тэги</button>'
+        name: '<span class="" data-sort="name">Название</span>',
+        maxWeight: '<span class="" data-sort="maxWeight">Максимальный вес</span>',
+        predator: '<span class="" data-sort="predator">Хищник</span>',
+        tags: '<span class="" data-sort="tags">Тэги</span>'
       });
 
     var
