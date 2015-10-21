@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Окунь",
+    "maxWeight": 5.91,
+    "predator": true,
+    "tags": ["Река", "Озеро", "Полосатый"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/Perca_fluviatilis-female_Siverskiy_Donets_River_Ukraine.jpg"
+  },
+  {
+    "name": "Щука",
+    "maxWeight": 35,
+    "predator": true,
+    "tags": ["Река", "Озеро", "Хищник"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Esox_lucius_ZOO_2.jpg/1280px-Esox_lucius_ZOO_2.jpg"
+  },
+  {
+    "name": "Карась",
+    "maxWeight": 3.5,
+    "predator": false,
+    "tags": ["Река", "Пруд", "Еда"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Carassius_gibelio_2008_G1.jpg/1920px-Carassius_gibelio_2008_G1.jpg"
+  },
+  {
+    "name": "Жерех",
+    "maxWeight": 12,
+    "predator": true,
+    "tags": ["Река"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Aspius_aspius_Prague_Vltava_1.jpg/1920px-Aspius_aspius_Prague_Vltava_1.jpg"
+  },
+  {
+    "name": "Судак",
+    "maxWeight": 15,
+    "predator": true,
+    "tags": ["Река", "Море", "Зубы"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/%D0%A1%D1%83%D0%B4%D0%B0%D0%BA%28Zander%29.jpg"
+  }
+]
+

@@ -4,12 +4,18 @@ var
   http = require('http');
 
 var
-  routes = require('./routes/index');
+  routes = require('./routes');
 
 var
   app = express(),
   port = process.env.PORT || '9876',
   server = http.createServer(app);
+
+// Set cross-origin header
+app.use(function(req, res, next) {
+  res.set('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.use('/', routes);
 
