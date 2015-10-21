@@ -10,11 +10,17 @@
     var
       line = document.createElement('DIV'),
       ul = document.createElement('UL'),
-      li = function(text) {
+      li = function(inner) {
         var
           el = document.createElement('LI');
 
-        el.innerText = text;
+        if (typeof inner === 'object') {
+          el.appendChild(inner);
+        } else {
+          el.innerHTML = inner;
+        }
+
+        el.className = 'table-cell';
 
         return el;
       },
@@ -22,13 +28,17 @@
 
     img.src = data.image;
 
+    ul.appendChild(li(img));
     ul.appendChild(li(data.name));
     ul.appendChild(li(data.maxWeight));
     ul.appendChild(li(data.predator));
-    ul.appendChild(li(data.tags));
-    ul.appendChild(img);
+    ul.appendChild(li(data.tags.toString()));
+
+    ul.className = 'table-row-content';
 
     line.appendChild((ul));
+
+    line.className = 'table-row';
 
     return line;
   }
