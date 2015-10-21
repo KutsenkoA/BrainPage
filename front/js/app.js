@@ -8,6 +8,7 @@
     fishes = {},
     paginationPages = [],
     pages,
+    currentPage = 0,
     tableHeader = createHeader();
 
   function createHeader() {
@@ -36,10 +37,10 @@
               return 1;
             }
           });
+
+          pagination(currentPage);
         }
       });
-
-
     }
 
     return header;
@@ -161,6 +162,8 @@
       page = typeof param === 'object' ? param.target.dataset.page : param,
       paginationFirst = document.getElementById('paginationFirst'),
       paginationLast = document.getElementById('paginationLast');
+
+    currentPage = page;
 
     paginationPages.forEach(function(button) {
       button.className = '';
