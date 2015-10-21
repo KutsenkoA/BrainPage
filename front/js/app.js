@@ -7,8 +7,26 @@
     pageSize = options.pageSize || 10,
     fishes = {},
     paginationPages = [],
-    pages;
+    pages,
+    tableHeader = createHeader();
 
+  function createHeader() {
+    var
+      header = createLine({
+        image: '',
+        name: '<a href="#">Название</a>',
+        maxWeight: '<a href="#">Максимальный вес</a>',
+        predator: '<a href="#">Хищник</a>',
+        tags: '<a href="#">Тэги</a>'
+      });
+
+    var
+      captions = header.getElementsByTagName('LI');
+
+    console.log(captions);
+
+    return header;
+  }
 
   function createLine(data) {
     var
@@ -133,9 +151,6 @@
 
     showFishes(page * pageSize, page * pageSize + pageSize);
 
-
-    console.log(page);
-
     if (page == 0) {
       console.log(paginationFirst);
       paginationPages[0].className = 'active';
@@ -159,6 +174,8 @@
       table = document.getElementById('jsonTable');
 
     table.innerHTML = "";
+
+    table.appendChild(tableHeader);
 
     fishes.forEach(function(fish) {
       if (index >= from && index < to) {
