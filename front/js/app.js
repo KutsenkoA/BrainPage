@@ -14,14 +14,14 @@
   function createHeader() {
     var
       header = createLine({
-        name: '<span class="" data-sort="name">Название</span>',
-        maxWeight: '<span class="" data-sort="maxWeight">Максимальный вес</span>',
-        predator: '<span class="" data-sort="predator">Хищник</span>',
-        tags: '<span class="" data-sort="tags">Тэги</span>'
+        name: '<span class="column-header text-primary" data-sort="name">Название</span>',
+        maxWeight: '<span class="column-header text-primary" data-sort="maxWeight">Максимальный вес</span>',
+        predator: '<span class="column-header text-primary" data-sort="predator">Хищник</span>',
+        tags: '<span class="column-header text-primary" data-sort="tags">Тэги</span>'
       });
 
     var
-      captions = header.getElementsByTagName('LI');
+      captions = header.getElementsByTagName('li');
 
     for (var i = 0; i < captions.length; i++) {
       captions[i].addEventListener('click', function(event) {
@@ -139,8 +139,8 @@
       paginationList = document.getElementById('paginationList');
 
       for(i = 0; i < pages; i++) {
-        button = document.createElement('LI');
-        a = document.createElement('A');
+        button = document.createElement('li');
+        a = document.createElement('a');
 
         a.className = 'pag_button';
         a.setAttribute('href', '#');
