@@ -20,6 +20,45 @@ html, body{
         text-align: center;
     }
 
+    .content-table{
+        display: table;
+        width: 100%;
+
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+    }
+
+    .table-row{
+        display: table-row;
+    }
+
+    .table-row:nth-of-type(even) .table-row-content{
+        background-color: #f7f7f7;
+    }
+
+    .table-row-content{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table-cell{
+        display: table-cell;
+        padding: 10px;
+        width: 20%;
+    }
+
+    .table-cell img{
+        max-width: 100%;
+    }
+
+    .photo{
+        line-height: 0;
+        text-align: center;
+    }
+
 .footer{
     margin: -40px 0 0;
     padding: 10px;

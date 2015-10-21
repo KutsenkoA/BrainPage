@@ -8,11 +8,11 @@
 
   function createLine(data) {
     var
-      line = document.createElement('DIV'),
-      ul = document.createElement('UL'),
+      line = document.createElement('div'),
+      ul = document.createElement('ul'),
       li = function(inner) {
         var
-          el = document.createElement('LI');
+          el = document.createElement('li');
 
         if (typeof inner === 'object') {
           el.appendChild(inner);
@@ -20,19 +20,20 @@
           el.innerHTML = inner;
         }
 
-        el.className = 'table-cell';
+        //el.className = 'table-cell';
 
         return el;
       },
-      img = document.createElement('IMG');
+      img = document.createElement('img');
 
     img.src = data.image;
+    img.alt = data.name;
 
-    ul.appendChild(li(img));
-    ul.appendChild(li(data.name));
-    ul.appendChild(li(data.maxWeight));
-    ul.appendChild(li(data.predator));
-    ul.appendChild(li(data.tags.toString()));
+    ul.appendChild(li(img)).className = 'table-cell photo';
+    ul.appendChild(li(data.name)).className = 'table-cell name';
+    ul.appendChild(li(data.maxWeight)).className = 'table-cell weight';
+    ul.appendChild(li(data.predator)).className = 'table-cell predator';
+    ul.appendChild(li(data.tags.toString())).className = 'table-cell tags';
 
     ul.className = 'table-row-content';
 
