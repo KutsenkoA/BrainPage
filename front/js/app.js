@@ -14,16 +14,33 @@
     var
       header = createLine({
         image: '',
-        name: '<a href="#">Название</a>',
-        maxWeight: '<a href="#">Максимальный вес</a>',
-        predator: '<a href="#">Хищник</a>',
-        tags: '<a href="#">Тэги</a>'
+        name: '<button type="button" class="btn btn-primary" data-sort="name">Название</button>',
+        maxWeight: '<button type="button" class="btn btn-primary" data-sort="maxWeight">Максимальный вес</button>',
+        predator: '<button type="button" class="btn btn-primary" href="#" data-sort="predator">Хищник</button>',
+        tags: '<button type="button" class="btn btn-primary" href="#" data-sort="tags">Тэги</button>'
       });
 
     var
       captions = header.getElementsByTagName('LI');
 
-    console.log(captions);
+    for (var i = 0; i < captions.length; i++) {
+      captions[i].addEventListener('click', function(event) {
+        var
+          sort = event.target.dataset.sort;
+
+        if (sort) {
+          fishes.sort(function(fishA, fishB) {
+            if (fishA[sort] < fishB[sort]) {
+              return -1;
+            } else {
+              return 1;
+            }
+          });
+        }
+      });
+
+
+    }
 
     return header;
   }
