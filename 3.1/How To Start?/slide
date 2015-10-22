@@ -1,0 +1,24 @@
+Comments to the slide:
+
+You can include the “Bootstrap” to your page in a few ways:
+
+1. Download the full version of the Bootstrap
+2. Customize Bootstrap (choose CSS-components, customize LESS variables, choose plugins)
+3. Dowload source files
+4. Import Bootstrap from CDN (Content Delivery Network)
+
+Useful links: 
+    Download Bootstrap
+    http://getbootstrap.com/getting-started/
+
+    Bootstrap Customizing
+    http://getbootstrap.com/customize/
+
+    Bootstrap Source Files
+    https://github.com/twbs/bootstrap
+
+    CDN
+    https://en.wikipedia.org/wiki/Content_delivery_network
+
+    BootstrapCDN
+    https://www.bootstrapcdn.com/
