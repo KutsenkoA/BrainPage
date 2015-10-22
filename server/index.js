@@ -17,7 +17,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use('/', routes);
+app.use(express.static(path.join(__dirname, 'front')));
+
+app.use('/json', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -34,4 +36,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-server.listen(port);
+server.listen(port, function() {
+  console.log('Server started on port:', port);
+});

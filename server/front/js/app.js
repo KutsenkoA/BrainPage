@@ -3,7 +3,7 @@
  */
 (function(options) {
   var
-    backend = options.backend || 'http://192.168.0.112:9876',
+    backend = options.backend || 'http://192.168.0.112:9876/json',
     pageSize = options.pageSize || 10,
     fishes = {},
     paginationPages = [],
