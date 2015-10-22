@@ -4,6 +4,7 @@
   "description": "Brain Academy Finally Practice",
   "main": "index.html",
   "scripts": {
+    "start": "PORT=3000 pm2 start server --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
