@@ -225,7 +225,8 @@
   loadJson(backend);
 
 })({
-  pageSize: 5
+  pageSize: 5,
+  backend: '/json'
 });
 
 
