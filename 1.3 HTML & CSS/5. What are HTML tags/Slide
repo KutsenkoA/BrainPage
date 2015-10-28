@@ -1,2 +1,27 @@
 What are HTML tags
 
+- Tags are instructions that are embedded directly into the text of the HTML document.
+- Tags begin with (<) and end with (>).
+- Tags are not case sensitive : <html> is equivalent to <HTML>
+- HTML tags can be of two types. They are:
+  * Paired Tags
+  * Unpaired Tags
+
+Comments:
+Each tag describes that the browser should do something instead of simply displaying the text.
+
+Paired Tags:
+A tag is said to be a paired tag if the text is placed between a tag and its companion tag.
+Text between Opening Tag and Closing Tag called "Tag Content".
+In paired tags, the first tag is referred to as Opening Tag and the second tag is referred to as Closing Tag.
+Closing tag should begin with '/' symbol.
+
+Example: <html></html>, <head></head>, <body></body> etc.
+
+Unpaired Tags:
+An unpaired tag does not have a companion tag.
+They are also known as Singular or Stand-Alone Tags.
+
+Example: <meta>, <link>, <img> etc.
+
+All these angle-bracketed words (or letters) are commonly called "HTML tags".
