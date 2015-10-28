@@ -253,12 +253,14 @@
   function showFishes(from, to, filtered) {
     var
       index = 0,
+      noResults = document.getElementById('noResults'),
       table = document.getElementById('jsonTable');
 
     table.innerHTML = "";
 
     table.appendChild(tableHeader);
 
+    noResults.style.display = filtered.length ? 'none' : 'block';
 
     filtered.forEach(function(fish) {
       if (index >= from && index < to) {
