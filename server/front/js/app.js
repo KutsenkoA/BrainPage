@@ -8,6 +8,7 @@
     fishes = {},
     paginationPages = [],
     pages,
+    filter,
     currentPage = 0,
     tableHeader = createHeader();
 
@@ -71,8 +72,6 @@
       img = 'Фото';
     }
 
-    console.log('[app 74]', typeof data.predator);
-
     if (typeof data.predator == 'boolean' && !data.predator) {
       data.predator = 'Нет';
     } else if (typeof data.predator == 'boolean' && data.predator) {
@@ -102,7 +101,7 @@
       console.log(err);
     }
 
-    showFishes(0, pageSize);
+    showFishes(0, pageSize, filterFishes());
   }
 
   function loadJson(url) {
@@ -114,6 +113,7 @@
       if (xhr.readyState === 4 && xhr.status === 200) {
         parseJson(xhr.responseText);
         createPagination();
+        setupFilter();
       }
     };
 
@@ -129,14 +129,25 @@
       paginationList,
       i,
       button,
-      a;
+      buttons,
+      a,
+      filtered = filterFishes();
 
-    pages = Math.ceil(fishes.length / pageSize);
+    pages = Math.ceil(filtered.length / pageSize);
 
-    if (fishes.length < pageSize) {
-      pagHolder.remove();
+
+    if (filtered.length < pageSize) {
+      pagHolder.style.display = 'none';
     } else {
+      pagHolder.style.display = 'block';
       paginationList = document.getElementById('paginationList');
+      buttons = paginationList.getElementsByTagName('LI');
+
+      for (i = buttons.length - 1; i; i--) {
+        if (buttons[i].id !== 'paginationFirst' && buttons[i].id !== 'paginationLast') {
+          buttons[i].remove();
+        }
+      }
 
       for(i = 0; i < pages; i++) {
         button = document.createElement('li');
@@ -169,6 +180,26 @@
 
   }
 
+  function setupFilter() {
+    var
+      input = document.getElementById('fishFilter'),
+      submit = document.getElementById('fishFilterSubmit'),
+      clear = document.getElementById('fishFilterClear');
+
+    submit.addEventListener('click', function() {
+      filter = input.value;
+      createPagination();
+      pagination(currentPage);
+    });
+
+    clear.addEventListener('click', function() {
+      filter = false;
+      input.value = '';
+      createPagination();
+      pagination(currentPage);
+    });
+  }
+
   function pagination(param) {
     var
       page = typeof param === 'object' ? param.target.dataset.page : param,
@@ -185,10 +216,9 @@
       button.className = '';
     });
 
-    showFishes(page * pageSize, page * pageSize + pageSize);
+    showFishes(page * pageSize, page * pageSize + pageSize, filterFishes());
 
     if (page == 0) {
-      console.log(paginationFirst);
       paginationPages[0].className = 'active';
       paginationFirst.className = 'disabled';
       paginationLast.className = '';
@@ -204,7 +234,13 @@
     }
   }
 
-  function showFishes(from, to) {
+  function filterFishes() {
+    return filter ? fishes.filter(function(fish) {
+      return fish.name.toLowerCase().indexOf(filter.toLowerCase()) !== -1;
+    }) : fishes;
+  }
+
+  function showFishes(from, to, filtered) {
     var
       index = 0,
       table = document.getElementById('jsonTable');
@@ -213,7 +249,8 @@
 
     table.appendChild(tableHeader);
 
-    fishes.forEach(function(fish) {
+
+    filtered.forEach(function(fish) {
       if (index >= from && index < to) {
         table.appendChild(createLine(fish));
       }
