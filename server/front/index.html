@@ -11,53 +11,69 @@
     <meta name="HandheldFriendly" content="true"/>
 </head>
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="/">BrainAcademy</a>
-                    </div>
+<div class="wrapper">
+    <header class="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">BrainAcademy</a>
                 </div>
-            </nav>
-        </header><!-- / .header -->
-
-        <main class="content container-fluid">
-            <div class="page-header">
-                <h1>BrainAcademy: Final Task</h1>
             </div>
+        </nav>
+    </header>
+    <!-- / .header -->
 
-          <div>
-            <input type="text" class="form-control" id="fishFilter" placeholder="Filter fishes">
-            <button id="fishFilterSubmit" class="btn btn-default">Filter</button>
-            <button id="fishFilterClear" class="btn btn-default">Clear</button>
-          </div>
+    <main class="content container-fluid">
+        <div class="page-header">
+            <h1>BrainAcademy: Final Task</h1>
+        </div>
 
-            <div id="jsonTable" class="content-table"></div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-10">
+                    <input type="text" class="form-control" id="fishFilter" placeholder="Filter fishes">
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-1">
+                    <button id="fishFilterSubmit" class="btn btn-primary btn-block">Filter</button>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-1">
+                    <button id="fishFilterClear" class="btn btn-default btn-block">Clear</button>
+                </div>
+            </div>
+        </div>
 
-            <div class="pagination-holder" id="paginationHolder">
-              <ul class="pagination" id="paginationList">
+        <div id="jsonTable" class="content-table"></div>
+
+        <div class="pagination-holder" id="paginationHolder">
+            <ul class="pagination" id="paginationList">
                 <li class="disabled" id="paginationFirst">
-                  <a href="#" title="Previous Page" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
+                    <a href="#" title="Previous Page" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
                 </li>
 
                 <li id="paginationLast">
-                  <a href="#" title="Next Page" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
+                    <a href="#" title="Next Page" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
                 </li>
-              </ul>
-            </div>
-        </main><!-- / .content -->
-    </div><!-- / .wrapper -->
-
-    <footer class="footer navbar-inverse">
-        <div class="container-fluid">
-            <p class="copyright text-center">&copy;2015 Brain Academy</p>
+            </ul>
         </div>
-    </footer><!-- / .footer -->
+
+        <div class="alert alert-danger text-center">
+            <p>No results</p>
+        </div>
+    </main>
+    <!-- / .content -->
+</div>
+<!-- / .wrapper -->
+
+<footer class="footer navbar-inverse">
+    <div class="container-fluid">
+        <p class="copyright text-center">&copy;2015 Brain Academy</p>
+    </div>
+</footer>
+<!-- / .footer -->
 </body>
 <script type="text/javascript" src="js/app.js"></script>
 </html>
