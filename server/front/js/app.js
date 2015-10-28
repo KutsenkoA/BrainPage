@@ -27,17 +27,27 @@
     for (var i = 0; i < captions.length; i++) {
       captions[i].addEventListener('click', function(event) {
         var
-          sort = event.target.dataset.sort;
-
-        if (sort) {
-          fishes.sort(function(fishA, fishB) {
+          sort = event.target.dataset.sort,
+          dir = event.target.dataset.dir ? event.target.dataset.dir : 'desc',
+          sortAsc = function(fishA, fishB) {
             if (fishA[sort] < fishB[sort]) {
               return -1;
             } else {
               return 1;
             }
-          });
+          },
+          sortDsc = function(fishA, fishB) {
+            if (fishA[sort] > fishB[sort]) {
+              return -1;
+            } else {
+              return 1;
+            }
+          };
 
+        event.target.dataset.dir = dir === 'desc' ? 'asc' : 'desc';
+
+        if (sort) {
+          fishes.sort(dir === 'desc' ? sortAsc : sortDsc);
           pagination(currentPage);
         }
       });
