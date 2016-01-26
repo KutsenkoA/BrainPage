@@ -4,7 +4,7 @@
   "description": "Simple server for Brain Academy",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server"
   },
   "repository": {
     "type": "git",
