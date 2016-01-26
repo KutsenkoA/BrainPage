@@ -1,0 +1,115 @@
+var book1 = {
+	author:"Charles Dickens",
+	title:"The Old Curiosity Shop",
+	category:"Fiction",creationYear:"1841",
+	publishers:"Pearson",
+	image:"libruaryForBook/book1.jpg",
+	};
+	
+var book2 = {
+	author:"Charles Dickens",
+	title:"Little Dorrit",
+	category:"Play",
+	creationYear:"1857",
+	publishers:"Shogakukan",
+	image:"libruaryForBook/book2.jpg",
+	};
+	
+var book3 = {
+	author:"William Shakespeare",
+	title:"Romeo and Juliet",
+	category:"Non Fiction",
+	creationYear:"1594",
+	publishers:"Pearson",
+	image:"libruaryForBook/book3.jpg",
+	};
+	
+var book4 = {
+	author:"Charles Darwin",
+	title:"The Origin of Species",
+	category:"Non Fiction",
+	creationYear:"1856",
+	publishers:"De Agostini Editore",
+	image:"libruaryForBook/book4.jpg",
+	};
+	
+var book5 = {
+	author:"Jane Austen",
+	title:"Pride and Prejudice",
+	category:"Fiction",
+	creationYear:"1811",
+	publishers:"China Publishing Group Corporate",
+	image:"libruaryForBook/book5.jpg",
+	};
+	
+var book6 = {
+	author:"Aleksandr Pushkin",
+	title:"Evgeniy Onegin",
+	category:"Play",
+	creationYear:"1831",
+	publishers:"Harper Collins",
+	image:"libruaryForBook/book6.jpg",
+	};
+	
+var book7 = {
+	author:"Harun Yahya",
+	title:"The Europea Union in Detail",
+	category:"History",
+	creationYear:"2006",
+	publishers:"Yerevan",
+	image:"libruaryForBook/book7.jpg",
+	};
+	
+var book8 = {
+	author:"Petter M. Senge",
+	title:"The evolution deceit",
+	category:"Fiction",
+	creationYear:"2001",
+	publishers:"Istanbul publishers",
+	image:"libruaryForBook/book8.jpg",
+	};
+	
+var book9 = {
+	author:"Robert G. Picard",
+	title:"The press and the decline of democracy",
+	category:"History",
+	creationYear:"1985",
+	publishers:"London",
+	image:"libruaryForBook/book9.jpg",
+	};
+	
+var book10 = {
+	author:"Peter Rado",
+	title:"Towards democratic decentralisation",
+	category:"History",
+	creationYear:"1985",
+	publishers:"Brussels",
+	image:"libruaryForBook/book10.jpg",
+	};
+	
+var book11 = {
+	author:"Manfred G. Schmidt",
+	title:"Vandalism",
+	category:"History",
+	creationYear:"2008",
+	publishers:"London",
+	image:"libruaryForBook/book11.jpg",
+	};
+	
+var book12 = {
+	author:"Theodor O. Knight",
+	title:"Strategic policy making in Central and Eastern Europe",
+	category:"History",
+	creationYear:"2007",
+	publishers:"Bratislava",
+	image:"libruaryForBook/book12.jpg",
+	};
+	
+var book13 = {
+	author:"Theodore D.Goldfarb",
+	title:"Study strategies for careers",
+	category:"Fiction",
+	creationYear:"2003",
+	publishers:"Boston",
+	image:"libruaryForBook/book13.jpg",
+	};
